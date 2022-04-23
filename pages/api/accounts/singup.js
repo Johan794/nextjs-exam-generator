@@ -11,7 +11,8 @@ export default function handler(req, res) {
     console.log(body.data.name)
     console.log(body.data.email)
     console.log(body.data.password)
-    if (method === "POST") {
+    const check = accounts.find(account => account.email === body.data.email && account.password === body.data.password && account.name === body.data.name);
+    if (method === "POST" && check === undefined) {
         accounts.push({
             id: accounts.length + 1,
             name: body.data.name,
@@ -24,12 +25,22 @@ export default function handler(req, res) {
         });
         console.log(accounts)
         res.statusCode = 200;
-        res.send(accounts);
+        res.send(
+
+            {
+                status: 'success',
+                message: 'account created'
+            }
+        );
       
     }else{
-        console.log("method:",method);
-        res.statusCode = 404;
-        res.end("Not found");
+        res.send(
+
+            {
+                status: 'error',
+                message: 'account already exists'
+            }
+        );
     }
     
 }

@@ -24,8 +24,13 @@ export default function createAccount() {
            
         });
         const json = await response.json();
-
-        window.location.href = '/api/student/1';
+        if (json.status== 'sucess') {
+            window.location.href = '/api/student/1';    
+        }else{
+            alert("This account already exists")
+            window.location.href = '/login';
+        }
+        
       
     }
     
