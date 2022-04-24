@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css'
+import Header from '../components/Header'
 
 export default function login(){ 
     let data = {
@@ -19,7 +20,7 @@ export default function login(){
         console.log("funciona?")
         if(json.status == 'success'){
             console.log("funciona sos un capo")
-            window.location.href = '/api/student/1';
+            window.location.href = '/teacher';
         }else{
             // console.log("no funciona")
             alert("Please check your email and password")
@@ -42,18 +43,20 @@ export default function login(){
         }
     }
     return(
-        <main className={styles.main}>
-            <form className='form' onSubmit={handleSubmit}>
-                <h1 className={styles.title}>Login</h1>
-            <input type="email" name='email' onChange={handleChange}/>
-            <br></br>
-            <input type="password" name='password' onChange={handleChange}/>
-            <br></br>
-            <input type="submit" value="Log in"/>
-            <br></br>
-            </form>
-            <a href='createAccount'> I don't have an account yet</a>
-        </main>
-        
+        <div>
+            <Header title='Login'></Header>
+            <main className={styles.main}>
+                <form className='form' onSubmit={handleSubmit}>
+                    <h1 className={styles.title}>Login</h1>
+                    <input type="email" name='email' onChange={handleChange} />
+                    <br></br>
+                    <input type="password" name='password' onChange={handleChange} />
+                    <br></br>
+                    <input type="submit" value="Log in" />
+                    <br></br>
+                </form>
+                <a href='createAccount'> I don't have an account yet</a>
+            </main>
+        </div>
     )
 }
