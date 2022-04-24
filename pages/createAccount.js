@@ -51,6 +51,13 @@ export default function createAccount() {
         }
     };
 
+    function comfirPassword(event){
+        if(data.password != event.target.value){
+            alert("The passwords don't match")
+            window.location.href = '/createAccount';
+        }
+    }
+
          
 
 
@@ -65,7 +72,7 @@ export default function createAccount() {
                 <br></br>
                 <input type="text" placeholder="Password" name='password'  onChange={handleChange} />
                 <br></br>
-                <input type="password" placeholder="Confirm Password" />
+                <input type="password" placeholder="Confirm Password"/>
                 <br></br>
                 <input type="submit" value="Create Account" />
             </form>
