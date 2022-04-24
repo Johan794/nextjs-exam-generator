@@ -5,37 +5,46 @@ export default function createAccount() {
         email: '',
         password: '',
     }
+
+    let ConfirmPassword = '';
    
 
 
     //crear el boton para seleccionar si es un estudiante o un profesor
     async function handleSubmit(event) {
         event.preventDefault();
-        console.log("DATA")
-        console.log(data)
-        const response = await fetch('/api/accounts/singup', {
-            method: 'POST',
-            body: JSON.stringify({data}),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+        console.log("Contraseñas")
+        console.log(data.password)
+        console.log(ConfirmPassword)
+        if(data.password == ConfirmPassword){
+            console.log("DATA");
+            console.log(data);
+            const response = await fetch("/api/accounts/singup", {
+              method: "POST",
+              body: JSON.stringify({ data }),
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+            });
+            const json = await response.json();
+            if (json.status == "success") {
+              window.location.href = "/api/student/1";
+            } else {
+              alert("This account already exists");
+              window.location.href = "/login";
             }
-
-           
-        });
-        const json = await response.json();
-        if (json.status== 'sucess') {
-            window.location.href = '/api/student/1';    
+        
         }else{
-            alert("This account already exists")
-            window.location.href = '/login';
+            alert("The passwords don't match")
+            window.location.href = "/createAccount";
         }
         
       
     }
     
      let handleChange = (event) => {
-        // console.log(event.target.name);
+        console.log(event.target.name);
         switch (event.target.name) {
             case 'name':
                 data.name = event.target.value;
@@ -46,18 +55,15 @@ export default function createAccount() {
             case 'password':
                 data.password = event.target.value;
                 break;
+            case 'confirm':
+                ConfirmPassword = event.target.value;  
+                    break;  
             default:
                 break;
         }
     };
 
-    function comfirPassword(event){
-        if(data.password != event.target.value){
-            alert("The passwords don't match")
-            window.location.href = '/createAccount';
-        }
-    }
-
+  
          
 
 
@@ -72,7 +78,7 @@ export default function createAccount() {
                 <br></br>
                 <input type="text" placeholder="Password" name='password'  onChange={handleChange} />
                 <br></br>
-                <input type="password" placeholder="Confirm Password"/>
+                <input type="password" placeholder="Confirm Password" name='confirm' onChange={handleChange}/>
                 <br></br>
                 <input type="submit" value="Create Account" />
             </form>
