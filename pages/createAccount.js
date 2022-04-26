@@ -22,12 +22,19 @@ let createAccount = () => {
         });
         const json = await response.json();
 
-        window.location.href = '/api/student/1';
+        if(json.status === 'success'){
+            //alert('account created')
+            console.log("account created")
+            window.location.href = '/api/student/1';
+        }else{
+            alert(json.message)
+        }
+        
       
     }
     
      let handleChange = (event) => {
-        // console.log(event.target.name);
+        console.log(event.target.name);
         switch (event.target.id) {
             case 'name':
                 data.name = event.target.value;
