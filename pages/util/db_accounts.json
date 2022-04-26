@@ -1,21 +1,65 @@
 [
-  {
-    "id": 1,
-    "name": "John Doe",
-    "email": "Johnn@gmail.com",
-    "password": "12345"
-  },
-  {
-    "id": 2,
-    "name": "Jane Doe",
-    "email": "Jane@gmail.com",
-    "password": "12345"
-  },
-  { "id": 3, "name": "Jose", "email": "Campaz@gmail.com", "password": "aaa" },
-  {
-    "id": 4,
-    "name": "Tattiana",
-    "email": "jhohansibaja@gmail.com",
-    "password": "aaa"
-  }
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "Johnn@gmail.com",
+        "password": "12345",
+        "student": "true"
+    },
+    {
+        "id": 2,
+        "name": "Jane Doe",
+        "email": "Jane@gmail.com",
+        "password": "12345",
+        "student": "true"
+    },
+    {
+        "id": 3,
+        "name": "Jose",
+        "email": "Campaz@gmail.com",
+        "password": "aaa",
+        "student": "true"
+    },
+    {
+        "id": 4,
+        "name": "Tattiana",
+        "email": "jhohansibaja@gmail.com",
+        "password": "aaa",
+        "student": "true"
+    },
+    {
+        "id": 5,
+        "name": "",
+        "email": "",
+        "password": "",
+        "student": "true"
+    },
+    {
+        "id": 6,
+        "name": "",
+        "email": "",
+        "password": "",
+        "student": "true"
+    },
+    {
+        "id": 7,
+        "name": "",
+        "email": "",
+        "password": "",
+        "student": "true"
+    },
+    {
+        "id": 8,
+        "name": "asd",
+        "email": "daesjaga2003@gmail.com",
+        "password": "123",
+        "student": "true"
+    },
+    {
+        "id": 9,
+        "name": "asd",
+        "email": "daesjaga2003@gmail.com",
+        "password": "123",
+        "student": "false"
+    }
 ]
