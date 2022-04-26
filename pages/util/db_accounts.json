@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+[{"id":1,"name":"John Doe","email":"Johnn@gmail.com","password":"12345"},{"id":2,"name":"Jane Doe","email":"Jane@gmail.com","password":"12345"},{"id":3,"name":"Jose","email":"Campaz@gmail.com","password":"aaa"},{"id":4,"name":"Tattiana","email":"jhohansibaja@gmail.com","password":"aaa"},{"id":5,"name":"Camilo Campaz Jiménez","email":"camilocampazj@gmail.com","password":"12345"}]
+=======
 [
   {
     "id": 1,
@@ -49,3 +52,4 @@
     "student": "true"
   }
 ]
+>>>>>>> 8e20f49d02164b978cc00980d758306ec6ee26f0
