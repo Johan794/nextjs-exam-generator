@@ -38,6 +38,9 @@ let createAccount = () => {
             case 'password':
                 data.password = event.target.value;
                 break;
+            case 'confirm':
+                ConfirmPassword = event.target.value;  
+                    break;  
             default:
                 break;
         }

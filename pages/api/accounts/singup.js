@@ -17,12 +17,22 @@ export default function handler(req, res) {
         });
         console.log(accounts)
         res.statusCode = 200;
-        res.send(accounts);
+        res.send(
+
+            {
+                status: 'success',
+                message: 'account created'
+            }
+        );
       
     }else{
-        console.log("method:",method);
-        res.statusCode = 404;
-        res.end("Not found");
+        res.send(
+
+            {
+                status: 'error',
+                message: 'account already exists'
+            }
+        );
     }
     
 }
