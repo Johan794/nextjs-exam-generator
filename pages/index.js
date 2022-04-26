@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -10,22 +11,25 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Exams creator app!
+          Welcome to Exams Creator app!
         </h1>
         <br></br>
         <h3 className={styles.title}>Please log in!</h3>
-        <h3>Or create an accuount</h3>
+        <h3>Or create an account</h3>
         <br></br>
         <div className={styles.grid}>
-          <a href="login" className={styles.card}>
-            <h2>I'm a student &rarr;</h2>
-          </a>
+          <Link href='/login'>
+            <a className={styles.card}>
+              <h2>Log in &rarr;</h2>
+            </a>
+          </Link>
 
-          <a href="login" className={styles.card}>
-            <h2>I'm a teacher &rarr;</h2>
-          </a>
+          <Link href='/createAccount'>
+            <a className={styles.card}>
+              <h2>Create account &rarr;</h2>
+            </a>
+          </Link>
 
-          
         </div>
       </main>
     </div>

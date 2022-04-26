@@ -1,10 +1,14 @@
 import styles from '../styles/Home.module.css'
+import Header from '../components/Header'
+import Link from 'next/link'
 
-export default function login(){ 
-    let data = {
-        email: '',
-        password: '',
-    }
+let data = {
+    email: '',
+    password: '',
+}
+
+let login = () =>{
+    
     async function handleSubmit(event) {
         event.preventDefault();
         const response = await fetch('/api/accounts/verifyAccount',{
@@ -19,7 +23,7 @@ export default function login(){
         console.log("funciona?")
         if(json.status == 'success'){
             console.log("funciona sos un capo")
-            window.location.href = '/api/student/1';
+            window.location.href = '/teacher';
         }else{
             // console.log("no funciona")
             alert("Please check your email and password")
@@ -42,18 +46,35 @@ export default function login(){
         }
     }
     return(
-        <main className={styles.main}>
-            <form className='form' onSubmit={handleSubmit}>
-                <h1 className={styles.title}>Login</h1>
-            <input type="email" name='email' onChange={handleChange}/>
-            <br></br>
-            <input type="password" name='password' onChange={handleChange}/>
-            <br></br>
-            <input type="submit" value="Log in"/>
-            <br></br>
-            </form>
-            <a href='createAccount'> I don't have an account yet</a>
-        </main>
-        
+        <div>
+            <Header title='Login'></Header>
+            <main className={styles.main}>
+                <form className='form' onSubmit={handleSubmit}>
+                    <legend className={styles.title}>Login</legend>
+                    <div class='mb-3'>
+                        <div class='mb-3'>
+                            <label for='email' class='form-label'>Correo electronico</label>
+                            <input type="email" class='form-control' id='email' onChange={handleChange} />
+                        </div>
+                        <div class='mb-3'>
+                            <label for='password' class='form-label'>Contraseña</label>
+                            <input type="password" class='form-control' id='password' onChange={handleChange} /> 
+                        </div>
+                        <div class='container'>
+                            <div class='row'>
+                                <div class='col text-center'>
+                                    <input type="submit" class='btn btn-terciary' value="Log in" />
+                                </div>
+                                <div class='col text-center'>
+                                    <Link href='createAccount'><input type='button' class='btn btn-terciary' value='Sign up' /></Link>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
     )
 }
+
+export default login
