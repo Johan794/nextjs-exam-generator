@@ -1,9 +1,10 @@
-import styles from '../../styles/Home.module.css'
-import Header from '../../components/Header'
-import QuestionBox from '../../components/QuestionsBox'
+import styles from '../../../styles/Home.module.css'
+import Header from '../../../components/Header'
+import QuestionBox from '../../../components/QuestionsBox'
 import {Card, CardContent} from '@mui/material'
 
 export default function createExam(){
+
     return(
         <div>
             <Header title='Create exam'/>
@@ -23,7 +24,7 @@ export default function createExam(){
                     <Card>
                         <CardContent>
                             <div class='text-center'>
-                                <button type='btn' class='btn btn-primary'>
+                                <button type='btn' class='btn btn-primary' >
                                     Crear pregunta
                                 </button>
                             </div>

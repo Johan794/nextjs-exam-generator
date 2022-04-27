@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import Navbar from '../components/Navbar';
 
 let createAccount = () => {
    
@@ -47,53 +48,54 @@ let createAccount = () => {
     };
 
     return (
-        <main className={styles.main}>
+        <div>
             <Header title='Sign up'></Header>
-
-            <form className='form' onSubmit={handleSubmit}>
-                <legend className={styles.title}>Create an account</legend>
-                <div class='mb-3'>
+            <Navbar></Navbar>
+            <main className={styles.main}>
+                <form className='form' onSubmit={handleSubmit}>
+                    <legend className={styles.title}>Create an account</legend>
                     <div class='mb-3'>
-                        <label for='name' class='form-label'>Primer nombre</label>
-                        <input type="text" class='form-control' name='name' id='name' />
-                    </div>
-                    <div class='mb-3'>
-                        <lable for='email' class='form-label'>Correo electronico</lable>
-                        <input type="email" name='email' id='email' class='form-control' />
-                    </div>
-                    <div class='mb-3'>
-                        <label for='password' class='form-label'>Contraseña</label>
-                        <input type="password" class='form-control' id='password' name='password'/>
-                    </div>
-                    <div class='mb-3'>
-                        <label for='confirmpassword' class='form-label'>Confirmar contraseña</label>
-                        <input type="password" class='form-control' id='confirmpassword' name='confirmpassword'/>
-                    </div>
-                    <div class='mb-3'>
-                        <label for='typeacc' class='form label'>Eres</label>
-                        <div class='form-check' id='typeacc'>
-                            <input type='radio' id='studentRadio' value={true} class='form-check-input' name='radioacc' checked/>
-                            <label for='studentRadio' class='form-check-label'>Estudiante</label>
+                        <div class='mb-3'>
+                            <label for='name' class='form-label'>Primer nombre</label>
+                            <input type="text" class='form-control' name='name' id='name' />
                         </div>
-                        <div class='form-check'>
-                            <input type='radio' id='teacherRadio' value={false} class='form-check-input' name='radioacc' />
-                            <label for='teacherRadio' class='form-check-label'>Profesor</label>
+                        <div class='mb-3'>
+                            <lable for='email' class='form-label'>Correo electronico</lable>
+                            <input type="email" name='email' id='email' class='form-control' />
                         </div>
-                    </div>
-                    <div class='container'>
-                        <div class='row'>
-                            <div class='col text-center'>
-                                <input type="submit" class='btn btn-terciary' value="Create cuenta" />
+                        <div class='mb-3'>
+                            <label for='password' class='form-label'>Contraseña</label>
+                            <input type="password" class='form-control' id='password' name='password'/>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='confirmpassword' class='form-label'>Confirmar contraseña</label>
+                            <input type="password" class='form-control' id='confirmpassword' name='confirmpassword'/>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='typeacc' class='form label'>Eres</label>
+                            <div class='form-check' id='typeacc'>
+                                <input type='radio' id='studentRadio' value={true} class='form-check-input' name='radioacc' checked/>
+                                <label for='studentRadio' class='form-check-label'>Estudiante</label>
                             </div>
-                            <div class='col text-center'>
-                                <Link href='/' ><input type="button" class='btn btn-terciary' value="Cancelar" /></Link>
+                            <div class='form-check'>
+                                <input type='radio' id='teacherRadio' value={false} class='form-check-input' name='radioacc' />
+                                <label for='teacherRadio' class='form-check-label'>Profesor</label>
                             </div>
                         </div>
+                        <div class='container'>
+                            <div class='row'>
+                                <div class='col text-center'>
+                                    <input type="submit" class='btn btn-terciary' value="Create cuenta" />
+                                </div>
+                                <div class='col text-center'>
+                                    <Link href='/' ><input type="button" class='btn btn-terciary' value="Cancelar" /></Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </main>
-        
+                </form>
+            </main>
+        </div> 
     )
 }
 

@@ -114,3 +114,17 @@
     flex-direction: column;
   }
 }
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #d6d6d6;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.navbarbut button{
+  margin-left: 5px;
+  border-radius: 5px;
+}
