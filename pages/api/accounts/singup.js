@@ -1,4 +1,17 @@
 //import accounts from '../../util/db_accounts'
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 export default function handler(req, res) {
     const accounts = require('../../util/db_accounts.json');
     const {method,body} = req;
@@ -45,3 +58,4 @@ export default function handler(req, res) {
     }
     
 }
+*/

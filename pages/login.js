@@ -8,7 +8,6 @@ let data = {
 }
 
 let login = () =>{
-    
     async function handleSubmit(event) {
         event.preventDefault();
         const response = await fetch('/api/accounts/verifyAccount',{
@@ -25,7 +24,7 @@ let login = () =>{
             console.log("funciona sos un capo")
             window.location.href = '/teacher';
         }else{
-            // console.log("no funciona")
+             console.log("no funciona")
             alert("Please check your email and password")
             window.location.href = '/login';
            
@@ -33,7 +32,7 @@ let login = () =>{
     }
 
     let handleChange = (event) => {
-        // console.log(event.target.name);
+        console.log(event.target.name);
         switch (event.target.name) {
             case 'email':
                 data.email = event.target.value;
@@ -54,11 +53,11 @@ let login = () =>{
                     <div class='mb-3'>
                         <div class='mb-3'>
                             <label for='email' class='form-label'>Correo electronico</label>
-                            <input type="email" class='form-control' id='email' onChange={handleChange} />
+                            <input type="email" class='form-control' id='email' name='email' onChange={handleChange} />
                         </div>
                         <div class='mb-3'>
                             <label for='password' class='form-label'>Contraseña</label>
-                            <input type="password" class='form-control' id='password' onChange={handleChange} /> 
+                            <input type="password" class='form-control' id='password' name='password' onChange={handleChange} /> 
                         </div>
                         <div class='container'>
                             <div class='row'>
