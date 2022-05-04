@@ -1,22 +1,28 @@
-
-export default function handler(req, res) {
-    const db = require('../../util/db_accounts.json');
+import {conn} from "../../util/database";
+export default async function handler(req, res) {
     const {method,body} = req;
     if(method === 'POST'){
         const {email,password} = body.data;
-        console.log(email,password)
-        const account = db.find(account => account.email == email && account.password == password);
-        if(account == undefined){
-            console.log('account not found');
+        console.log(email,password);
+        try {
+            const result = await conn.query(`SELECT * FROM users WHERE email = $1 and user_password = $2;`, [email,password]);
+           // console.log("QUERY: "+result.rows[0]);
+            //console.log(result.rows[0]);
+            if(result.rows[0] === undefined){
+                res.send({
+                    status: 'error',
+                    message: 'email or password incorrect'
+                });
+            }else{
+                res.send({
+                    status: 'success',
+                    data: result.rows[0]
+                });
+            }
+        }catch (error) {
             res.send({
                 status: 'error',
-                message: 'account not found'
-            });
-        }else{
-             console.log('account found');
-              res.send({
-                status: 'success',
-                message: 'account found'
+                message: error.message
             });
         }
     }

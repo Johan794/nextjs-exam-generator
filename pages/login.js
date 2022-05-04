@@ -25,7 +25,7 @@ let login = () =>{
             window.location.href = '/teacher';
         }else{
              console.log("no funciona")
-            alert("Please check your email and password")
+            alert(json.message)
             window.location.href = '/login';
            
         }

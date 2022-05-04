@@ -2,11 +2,12 @@ import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
+let type = '';
 let createAccount = () => {
-   
     //crear el boton para seleccionar si es un estudiante o un profesor
     async function handleSubmit(event) {
         event.preventDefault();
+        type = event.target.radioacc.value
         const response = await fetch('/api/accounts/singup', {
             method: 'POST',
             body: JSON.stringify({
@@ -24,8 +25,16 @@ let createAccount = () => {
 
         if(json.status === 'success'){
             //alert('account created')
-            console.log("account created")
-            window.location.href = '/api/student/1';
+            console.log(type)
+            console.log(json.data)
+            if(type === 'true'){
+                //es estudiante
+                window.location.href = '/teacher';
+            }else{
+                // es profesor
+                window.location.href = '/teacher';
+            }
+            
         }else{
             alert(json.message)
         }

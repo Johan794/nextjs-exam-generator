@@ -1,9 +1,8 @@
-
+import {conn} from "../../util/database";
 export default function handler(req, res) {
     //TODO: Implement
-    const db = require('../../util/db_exams.json');
     const {method,body} = req;
-    const fs = require('fs');
+  
     if(method === "POST"){
 
     }else{
