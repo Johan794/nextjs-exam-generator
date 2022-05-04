@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 import Link from 'next/link'
 
 let data = {
@@ -47,6 +48,7 @@ let login = () =>{
     return(
         <div>
             <Header title='Login'></Header>
+            <Navbar></Navbar>
             <main className={styles.main}>
                 <form className='form' onSubmit={handleSubmit}>
                     <legend className={styles.title}>Login</legend>

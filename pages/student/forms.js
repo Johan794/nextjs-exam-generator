@@ -7,6 +7,9 @@ export default function Forms(){
         <div>
             <Header title='Forms'></Header>
             <main className={styles.main}>
+                <Grid container spacing={3}>
+                    
+                </Grid>
                 <Card sx={{ minWidth:600}}>
                     <CardContent>
                         <h1>Forms</h1>
