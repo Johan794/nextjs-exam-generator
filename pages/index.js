@@ -4,6 +4,8 @@ import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
+//TODO: crear la clase en el backend para que califique el examen y lo inserte en la base de datos
+ 
 export default function Home() {
   return (
     <div className={styles.container}>

@@ -1,4 +1,4 @@
-import conn from "../../util/database";
+import {conn} from "../../util/database";
 
 
 export default  async function handler(req, res) {

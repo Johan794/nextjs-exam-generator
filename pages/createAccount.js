@@ -8,37 +8,49 @@ let createAccount = () => {
     //crear el boton para seleccionar si es un estudiante o un profesor
     async function handleSubmit(event) {
         event.preventDefault();
-        type = event.target.radioacc.value
-        const response = await fetch('/api/accounts/singup', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: event.target.name.value,
-                email: event.target.email.value,
-                password: event.target.password.value,
-                student: event.target.radioacc.value
-            }),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }  
-        });
-        const json = await response.json();
-
-        if(json.status === 'success'){
-            //alert('account created')
-            console.log(type)
-            console.log(json.data)
-            if(type === 'true'){
-                //es estudiante
-                window.location.href = '/teacher';
+        if(event.target.password.value == event.target.confirm.value){
+            const response = await fetch('/api/accounts/singup', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: event.target.name.value,
+                    email: event.target.email.value,
+                    password: event.target.password.value,
+                    student: event.target.radioacc.value
+                }),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }  
+            });
+            const json = await response.json();
+    
+            if(json.status === 'success'){
+                //alert('account created')
+                console.log(type)
+                //console.log(json.data)
+                if(json.data.is_estudent === true){
+                    //es estudiante
+                    window.location.href = '/student/forms';
+                }else{
+                    // es profesor
+                    window.location.href = '/teacher';
+                }
+                
             }else{
-                // es profesor
-                window.location.href = '/teacher';
+                if(json.message== "llave duplicada viola restricción de unicidad «users_username_key»"){
+                    alert("This account already exists")
+                    window.location.reload();
+                }else{
+                    alert("Something went wrong")
+                    window.location.reload();
+                }
+                
             }
-            
         }else{
-            alert(json.message)
+            alert('passwords dont match')
+            window.location.reload();
         }
+        
         
       
     }
@@ -85,7 +97,7 @@ let createAccount = () => {
                         </div>
                         <div class='mb-3'>
                             <label for='confirmpassword' class='form-label'>Confirmar contraseña</label>
-                            <input type="password" class='form-control' id='confirmpassword' name='confirmpassword'/>
+                            <input type="password" class='form-control' id='confirmpassword' name='confirm'/>
                         </div>
                         <div class='mb-3'>
                             <label for='typeacc' class='form label'>Eres</label>

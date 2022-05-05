@@ -7,7 +7,7 @@ if(!conn){
         password: '15164414',
         host: 'localhost',
         port: 5432,
-        database: 'db_backend'
+        database: 'pageDB'
     });
 }
 

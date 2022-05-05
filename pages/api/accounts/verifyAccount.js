@@ -6,7 +6,8 @@ export default async function handler(req, res) {
         console.log(email,password);
         try {
             const result = await conn.query(`SELECT * FROM users WHERE email = $1 and user_password = $2;`, [email,password]);
-           // console.log("QUERY: "+result.rows[0]);
+            
+            console.log("QUERY: "+result.rows[0]);
             //console.log(result.rows[0]);
             if(result.rows[0] === undefined){
                 res.send({

@@ -8,6 +8,8 @@ let data = {
     password: '',
 }
 
+let type = '';
+
 let login = () =>{
     async function handleSubmit(event) {
         event.preventDefault();
@@ -22,8 +24,19 @@ let login = () =>{
         const json = await response.json();
         console.log("funciona?")
         if(json.status == 'success'){
-            console.log("funciona sos un capo")
-            window.location.href = '/teacher';
+            console.log("funciona sos un capo\n")
+            console.log(json.data)
+            if(json.data.is_estudent === true){
+                //es estudiante
+                console.log("es estudiante")    
+                window.location.href = '/student/forms';
+            }else{
+                // es profesor
+                //console.log(json.type)
+                console.log("es profesor")
+              window.location.href = '/teacher';
+            }
+            
         }else{
              console.log("no funciona")
             alert(json.message)
