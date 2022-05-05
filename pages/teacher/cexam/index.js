@@ -1,7 +1,9 @@
 import styles from '../../../styles/Home.module.css'
 import Header from '../../../components/Header'
 import QuestionBox from '../../../components/QuestionsBox'
+import Question from '../../../components/Question'
 import {Card, CardContent} from '@mui/material'
+import Link from 'next/Link'
 
 export default function createExam(){
 
@@ -21,15 +23,22 @@ export default function createExam(){
                     <div class='text-center'>
                         {QuestionBox}
                     </div>
-                    <Card>
-                        <CardContent>
-                            <div class='text-center'>
-                                <button type='btn' class='btn btn-primary' >
-                                    Crear pregunta
-                                </button>
-                            </div>
-                        </CardContent>
-                    </Card>
+                    <div class='mb-3'>
+                        <Question />
+                    </div>
+                    <div class='mb-3'>
+                        <Card>
+                            <CardContent>
+                                <div class='text-center'>
+                                    <Link href={'/teacher/cexam/cquestion'}>
+                                        <button type='btn' class='btn btn-primary' >
+                                            Crear pregunta
+                                        </button>
+                                    </Link>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
                 </form>
             </main>
         </div>

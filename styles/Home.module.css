@@ -128,3 +128,10 @@
   margin-left: 5px;
   border-radius: 5px;
 }
+
+.centerdiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

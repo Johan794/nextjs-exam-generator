@@ -1,5 +1,5 @@
-import Header from '../../components/Header'
-import styles from '../../styles/Home.module.css'
+import Header from '../../../components/Header'
+import styles from '../../../styles/Home.module.css'
 import {Card, CardContent, Grid} from '@mui/material'
 
 export default function Forms(){
