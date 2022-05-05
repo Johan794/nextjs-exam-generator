@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       [req.query.id]
     );
 
-    res.json(result.rows[0]);
+    res.json(result.rows);
   } catch (error) {
     res.send({
       status: "error",

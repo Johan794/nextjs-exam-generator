@@ -1,6 +1,5 @@
 import {conn} from "../../util/database";
 
-
 export default  async function handler(req, res) {
    try {
       const result =  await conn.query(
@@ -16,7 +15,7 @@ export default  async function handler(req, res) {
         });
       
       }else{
-         res.json(result.rows[0]);
+         res.json(result.rows);
       }
       
 
