@@ -41,8 +41,8 @@ let createAccount = () => {
                     alert("This account already exists")
                     window.location.reload();
                 }else{
+                    console.log(json.message)
                     alert("Something went wrong")
-                    window.location.reload();
                 }
                 
             }
@@ -54,31 +54,9 @@ let createAccount = () => {
         
       
     }
-    
-     let handleChange = (event) => {
-        console.log(event.target.name);
-        switch (event.target.id) {
-            case 'name':
-                data.name = event.target.value;
-                break;
-            case 'email':
-                data.email = event.target.value;
-                break;
-            case 'password':
-                data.password = event.target.value;
-                break;
-            case 'confirm':
-                ConfirmPassword = event.target.value;  
-                    break;  
-            default:
-                break;
-        }
-    };
-
     return (
         <div>
             <Header title='Sign up'></Header>
-            <Navbar></Navbar>
             <main className={styles.main}>
                 <form className='form' onSubmit={handleSubmit}>
                     <legend className={styles.title}>Create an account</legend>
@@ -102,7 +80,7 @@ let createAccount = () => {
                         <div class='mb-3'>
                             <label for='typeacc' class='form label'>Eres</label>
                             <div class='form-check' id='typeacc'>
-                                <input type='radio' id='studentRadio' value={true} class='form-check-input' name='radioacc' checked/>
+                                <input type='radio' id='studentRadio' value={true} class='form-check-input' name='radioacc'/>
                                 <label for='studentRadio' class='form-check-label'>Estudiante</label>
                             </div>
                             <div class='form-check'>

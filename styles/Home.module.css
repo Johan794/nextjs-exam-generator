@@ -134,4 +134,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+}
+
+.horizontalflexdiv{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.buttondiv{
+  margin-top: 50px;
 }

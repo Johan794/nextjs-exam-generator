@@ -1,24 +1,28 @@
 import Header from '../../../components/Header'
+import Card from '../../../components/Card'
 import styles from '../../../styles/Home.module.css'
-import {Card, CardContent, Grid} from '@mui/material'
+import {Grid, Container, Paper} from '@mui/material'
 
-export default function Forms(){
+export default function Forms({forms}){
     return(
-        <div>
+        <div className={styles.centerdiv}>
             <Header title='Forms'></Header>
-            <main className={styles.main}>
-                <Grid container spacing={3}>
-                    
-                </Grid>
-                <Card sx={{ minWidth:600}}>
-                    <CardContent>
-                        <h1>Forms</h1>
-                    </CardContent>
-                </Card>
-                <Grid>
-
-                </Grid>
-            </main>
+            <Container maxWidth='sm'>
+                <Paper sx={{my: 2, p: 1}}>
+                    <h2>Exámenes</h2>
+                </Paper>
+            </Container>
+            <div className={styles.horizontalflexdiv}>
+                {forms.map(element => (
+                    <Card title={element.title} directto={`/student/forms/${element.id}`}/>
+                ))}
+            </div>
         </div>
     )
+}
+
+Forms.getInitialProps = async () => {
+    const res = await fetch('http://localhost:3000/api/student/getExams',{method:'POST'})
+    const data = await res.json()
+    return {forms:data}
 }

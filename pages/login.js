@@ -61,7 +61,6 @@ let login = () =>{
     return(
         <div>
             <Header title='Login'></Header>
-            <Navbar></Navbar>
             <main className={styles.main}>
                 <form className='form' onSubmit={handleSubmit}>
                     <legend className={styles.title}>Login</legend>

@@ -1,0 +1,43 @@
+[
+    {
+        "id":1,
+        "title":"Electricidad y magnetismo",
+        "password":"123",
+        "questions":[
+            {
+                "question":"¿Que es un toroide?",
+                "options":["a","b","c","d"],
+                "answer":1
+            },
+            {
+                "question":"¿Que es un solenoide?",
+                "options":["a","b","c","d"],
+                "answer":2
+            }
+        ]
+    },
+    {
+        "id":2,
+        "title":"Matematicas discretas",
+        "password":"123",
+        "questions":[]
+    },
+    {
+        "id":2,
+        "title":"Matematicas discretas",
+        "password":"123",
+        "questions":[]
+    },
+    {
+        "id":2,
+        "title":"Matematicas discretas",
+        "password":"123",
+        "questions":[]
+    },
+    {
+        "id":2,
+        "title":"Matematicas discretas",
+        "password":"123",
+        "questions":[]
+    }
+]
