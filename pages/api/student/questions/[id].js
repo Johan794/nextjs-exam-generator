@@ -1,4 +1,4 @@
-import { conn } from "../../util/database";
+import { conn } from "../../../util/database";
 export default async function handler(req, res) {
   const { method, body } = req;
   if (method === "POST") {
@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         `
             SELECT * FROM questions q WHERE q.exam_id = $1 ;
             `,
-        [body.exam_id]
+        [req.query.id]
       );
 
       if (result.rows[0] === undefined) {

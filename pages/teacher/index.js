@@ -15,7 +15,7 @@ export default function Forms({forms}){
             </Container>
             <div className={styles.horizontalflexdiv}>
                 {forms.map(element => (
-                    <Card title={element.title} directto={`/teacher/${element.id}`}/>
+                    <Card title={element.subject_exam} directto={`/teacher/${element.id}`}/>
                 ))}
             </div>
             <div className={styles.buttondiv}>

@@ -6,11 +6,10 @@ export default async function handler(req, res) {
   try {
     const result = await conn.query(
       `
-      SELECT * FROM exams e WHERE e.access_code = $1;
+      SELECT * FROM exams e WHERE e.id = $1;
       `,
       [req.query.id]
     );
-
     res.json(result.rows);
   } catch (error) {
     res.send({

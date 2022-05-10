@@ -1,6 +1,6 @@
-import Header from '../../../components/Header'
-import Card from '../../../components/Card'
-import styles from '../../../styles/Home.module.css'
+import Header from '../../components/Header'
+import Card from '../../components/Card'
+import styles from '../../styles/Home.module.css'
 import {Grid, Container, Paper} from '@mui/material'
 
 export default function Forms({forms}){
@@ -14,7 +14,7 @@ export default function Forms({forms}){
             </Container>
             <div className={styles.horizontalflexdiv}>
                 {forms.map(element => (
-                    <Card title={element.title} directto={`/student/forms/${element.id}`}/>
+                    <Card title={element.subject_exam} directto={`/student/${element.id}`}/>
                 ))}
             </div>
         </div>
